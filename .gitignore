@@ -1,0 +1,9 @@
+__pycache__
+*.pyc
+.vscode
+.vs
+*.so
+mdtrajectory/test/test_dumps
+*.sln
+*.vcxproj*
+CppProperties.json
