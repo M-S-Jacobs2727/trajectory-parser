@@ -2,7 +2,7 @@ from pathlib import Path
 
 import numpy as np
 
-import dumpParser as dp
+import mdtrajectory.mdtrajectory as dp
 
 class TestGenerators:
     dumpdir = Path("test/test_dumps")
