@@ -1,21 +1,15 @@
+#include "readLmp.h"
+
 #include <cstdint>
 #include <fstream>
 #include <optional>
 #include <string>
 #include <vector>
 
+#include "Frame.h"
+
 namespace MDTraj
 {
-struct Frame
-{
-    int64_t timestep = -1L;
-    int64_t natoms = -1L;
-    double box[6] = {0.0};
-    double tilt[3] = {0.0};
-    std::vector<std::string> columns;
-    std::vector<double> data;
-};
-
 bool isWhitespace(const std::string& str)
 {
     if (str.empty())
@@ -26,7 +20,7 @@ bool isWhitespace(const std::string& str)
     return true;
 }
 
-std::optional<Frame> readTxtFrame(std::ifstream& file)
+std::optional<Frame> readLmpTxtFrame(std::ifstream& file)
 {
     std::string word;
     file >> word;
@@ -136,7 +130,7 @@ std::optional<Frame> readTxtFrame(std::ifstream& file)
     return frame;
 }
 
-std::optional<Frame> readBinFrame(std::ifstream& file)
+std::optional<Frame> readLmpBinFrame(std::ifstream& file)
 {
     int64_t timestep = -1;
     file.read(reinterpret_cast<char*>(&timestep), sizeof timestep);
