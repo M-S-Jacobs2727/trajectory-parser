@@ -3,7 +3,7 @@ __pycache__
 .vscode
 .vs
 *.so
-test_dumps
+/test_dumps
 *.sln
 *.vcxproj*
 CppProperties.json
